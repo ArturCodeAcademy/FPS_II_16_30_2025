@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 4111241}
   - component: {fileID: 4111242}
   - component: {fileID: 4111243}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <PlayerLayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   <Camera>k__BackingField: {fileID: 18043554}
   <CharacterController>k__BackingField: {fileID: 4111242}
 --- !u!1 &18043552
@@ -440,7 +440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2122926163}
   m_Layer: 0
-  m_Name: Setup VS2022 - Write scripts - Add Plane
+  m_Name: Add Plane - Jumps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -455,7 +455,7 @@ Transform:
   m_GameObject: {fileID: 2122926162}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4420161, y: 1.3776656, z: 10.4528055}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
