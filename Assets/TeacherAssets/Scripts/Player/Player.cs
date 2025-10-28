@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 	[field: Header("Components")]
 	[field: SerializeField] public Camera Camera { get; private set; }
 	[field: SerializeField] public CharacterController CharacterController { get; private set; }
+	[field: SerializeField] public CharacterGravityController GravityController { get; private set; }
 
 	private void Awake()
     {
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
 	{
 		Camera = GetComponentInChildren<Camera>();
 		CharacterController = GetComponent<CharacterController>();
+		GravityController = GetComponent<CharacterGravityController>();
 	}
 
 #endif
