@@ -1,1 +1,2 @@
 Terrain Sample Asset Pack -> https://assetstore.unity.com/packages/3d/environments/landscapes/terrain-sample-asset-pack-145808
+Water Shaders V2.x -> https://assetstore.unity.com/packages/vfx/shaders/water-shaders-v2-x-149916
