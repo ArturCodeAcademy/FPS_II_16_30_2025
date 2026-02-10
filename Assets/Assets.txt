@@ -3,3 +3,4 @@ Water Shaders V2.x -> https://assetstore.unity.com/packages/vfx/shaders/water-sh
 Medieval Bridge 3D -> https://assetstore.unity.com/packages/3d/environments/historic/medieval-bridge-3d-67509
 Modular Fantasy Bridges -> https://assetstore.unity.com/packages/3d/environments/fantasy/modular-fantasy-bridges-99940
 Modular Prison Asset Pack -> https://assetstore.unity.com/packages/3d/environments/dungeons/modular-prison-asset-pack-232410
+Particle Pack -> https://assetstore.unity.com/packages/vfx/particles/particle-pack-127325
