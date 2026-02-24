@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -18,7 +19,12 @@ public class Health : MonoBehaviour, IHitable
         _currentHealth = _maxHealth;
     }
 
-    public float Hit(float damage)
+	public void ApplyDamage(float amount)
+	{
+		Hit(amount);
+	}
+
+	public float Hit(float damage)
     {
         if (damage <= 0)
             return 0;
