@@ -3,7 +3,10 @@ using UnityEngine.Events;
 
 public class Oxygen : MonoBehaviour
 {
-	[Header("Oxygen Params")]
+	public float CurrentOxygen => _currentOxygen;
+	public float MaxOxygen => _maxOxygenAmount;
+
+    [Header("Oxygen Params")]
     [SerializeField, Min(1)] private float _maxOxygenAmount = 100f;
 	[SerializeField, Min(0.1f)] private float _oxygenDepletionRate = 100f / 30f;
 	[SerializeField, Min(0.1f)] private float _oxygenReplenishmentRate = 100f / 10f;
