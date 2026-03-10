@@ -15,6 +15,7 @@ public class LongInteractUI : MonoBehaviour
 	private void Start()
 	{
 		UpdateUI(0);
+		_sliderBackground.gameObject.SetActive(_longInteractable is not null);
 	}
 
 	private void OnEnable()

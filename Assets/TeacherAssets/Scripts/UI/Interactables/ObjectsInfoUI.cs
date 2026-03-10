@@ -54,5 +54,6 @@ public class ObjectsInfoUI : MonoBehaviour
 		_nameText.text = obj?.MainInformation ?? string.Empty;
 		_infoText.text = obj?.Description ?? string.Empty;
 		_iconImage.sprite = obj?.Icon;
+		_iconImage.enabled = obj?.Icon is not null;
 	}
 }
