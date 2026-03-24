@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,6 +15,7 @@ public class Oxygen : MonoBehaviour
 	[SerializeField] private LayerMask[] _noOxygenLayers;
 
 	[Header("Oxygen Events")]
+	public UnityEventOxygenPulse OnOxygenPulseChanged;
 	public UnityEventOxygen OnOxygenAmountChanged;
 	public UnityEventOxygen OnOxygenAmountIncreased;
 	public UnityEventOxygen OnOxygenAmountDecreased;
@@ -24,6 +26,7 @@ public class Oxygen : MonoBehaviour
 	private float _currentOxygen;
 	private float _spasmTimer = 0;
 	private bool _isInNoOxygenZone = false;
+	private HashSet<Transform> _noOxygenZones = new HashSet<Transform>();
 
 	private void Awake()
 	{
@@ -52,6 +55,8 @@ public class Oxygen : MonoBehaviour
 					OnPulmonarySpasm.Invoke();
 					_spasmTimer = 0;
 				}
+
+				OnOxygenPulseChanged?.Invoke(new OxygenPulseArgs(Time.deltaTime, _pulmonarySpasmPeriod, _spasmTimer));
 			}
 
 			if (delta != 0)
@@ -63,6 +68,7 @@ public class Oxygen : MonoBehaviour
 		else
 		{
 			_spasmTimer = 0;
+			OnOxygenPulseChanged?.Invoke(new OxygenPulseArgs(0, _pulmonarySpasmPeriod, _spasmTimer));
 			float delta = _oxygenReplenishmentRate * Time.deltaTime;
 			_currentOxygen = Mathf.Min(_maxOxygenAmount, _currentOxygen + delta);
 
@@ -85,6 +91,7 @@ public class Oxygen : MonoBehaviour
 		{
 			if (((1 << other.gameObject.layer) & layer) != 0)
 			{
+				_noOxygenZones.Add(other.transform);
 				_isInNoOxygenZone = true;
 				return;
 			}
@@ -97,7 +104,9 @@ public class Oxygen : MonoBehaviour
 		{
 			if (((1 << other.gameObject.layer) & layer) != 0)
 			{
-				_isInNoOxygenZone = false;
+				_noOxygenZones.Remove(other.transform);
+				if (_noOxygenZones.Count == 0)
+					_isInNoOxygenZone = false;
 				return;
 			}
 		}
