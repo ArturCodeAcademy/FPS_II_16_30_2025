@@ -85,6 +85,26 @@ public class Oxygen : MonoBehaviour
 		}
 	}
 
+	public float AddOxygen(float amount)
+	{
+		if (amount < 0 || _currentOxygen >= _maxOxygenAmount)
+			return 0;
+
+		float previousOxygen = _currentOxygen;
+		_currentOxygen = Mathf.Min(_maxOxygenAmount, _currentOxygen + amount);
+
+		float actualAdded = _currentOxygen - previousOxygen;
+		OnOxygenAmountChanged.Invoke(new OxygenEventArgs(actualAdded, _currentOxygen, _maxOxygenAmount));
+		OnOxygenAmountIncreased.Invoke(new OxygenEventArgs(actualAdded, _currentOxygen, _maxOxygenAmount));
+
+		if (_currentOxygen >= _maxOxygenAmount)
+		{
+			OnOxygenReplenished.Invoke();
+		}
+
+		return actualAdded;
+	}
+
 	private void OnTriggerEnter(Collider other)
 	{
 		foreach (var layer in _noOxygenLayers)

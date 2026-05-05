@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 	[field: SerializeField] public CharacterGravityController GravityController { get; private set; }
 	[field: SerializeField] public PlayerCrouch Crouch { get; private set; }
 	[field: SerializeField] public PlayerView View { get; private set; }
+	[field: SerializeField] public Oxygen Oxygen { get; private set; }
 
 	private void Awake()
     {
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
 		GravityController = GetComponent<CharacterGravityController>();
 		Crouch = GetComponent<PlayerCrouch>();
 		View = GetComponentInChildren<PlayerView>();
+		Oxygen = GetComponentInChildren<Oxygen>();
 	}
 
 #endif
