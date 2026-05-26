@@ -21,7 +21,7 @@ public class MiniGameBase : MonoBehaviour, IInteractable
 
 	protected bool _gameInProgress = false;
 
-	private void Awake()
+	protected virtual void Awake()
 	{
 		_virtualCamera.Priority = 0;
 	}
