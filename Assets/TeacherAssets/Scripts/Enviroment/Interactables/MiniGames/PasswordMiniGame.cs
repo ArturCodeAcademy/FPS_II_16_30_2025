@@ -35,44 +35,43 @@ public class PasswordMiniGame : MiniGameBase
 
 		int lastInputLength = _inputPassword.Length;
 
-		if (Input.GetKeyUp(KeyCode.Keypad1))
+		if (Input.GetKeyUp(KeyCode.Keypad1) || Input.GetKeyUp(KeyCode.Alpha1))
 		{
 			_inputPassword += "1";
-
 		}
-		else if (Input.GetKeyUp(KeyCode.Keypad2))
+		else if (Input.GetKeyUp(KeyCode.Keypad2) || Input.GetKeyUp(KeyCode.Alpha2))
 		{
 			_inputPassword += "2";
 		}
-		else if (Input.GetKeyUp(KeyCode.Keypad3))
+		else if (Input.GetKeyUp(KeyCode.Keypad3) || Input.GetKeyUp(KeyCode.Alpha3))
 		{
 			_inputPassword += "3";
 		}
-		else if (Input.GetKeyUp(KeyCode.Keypad4))
+		else if (Input.GetKeyUp(KeyCode.Keypad4) || Input.GetKeyUp(KeyCode.Alpha4))
 		{
 			_inputPassword += "4";
 		}
-		else if (Input.GetKeyUp(KeyCode.Keypad5))
+		else if (Input.GetKeyUp(KeyCode.Keypad5) || Input.GetKeyUp(KeyCode.Alpha5))
 		{
 			_inputPassword += "5";
 		}
-		else if (Input.GetKeyUp(KeyCode.Keypad6))
+		else if (Input.GetKeyUp(KeyCode.Keypad6) || Input.GetKeyUp(KeyCode.Alpha6))
 		{
 			_inputPassword += "6";
 		}
-		else if (Input.GetKeyUp(KeyCode.Keypad7))
+		else if (Input.GetKeyUp(KeyCode.Keypad7) || Input.GetKeyUp(KeyCode.Alpha7))
 		{
 			_inputPassword += "7";
 		}
-		else if (Input.GetKeyUp(KeyCode.Keypad8))
+		else if (Input.GetKeyUp(KeyCode.Keypad8) || Input.GetKeyUp(KeyCode.Alpha8))
 		{
 			_inputPassword += "8";
 		}
-		else if (Input.GetKeyUp(KeyCode.Keypad9))
+		else if (Input.GetKeyUp(KeyCode.Keypad9) || Input.GetKeyUp(KeyCode.Alpha9))
 		{
 			_inputPassword += "9";
 		}
-		else if (Input.GetKeyUp(KeyCode.Keypad0))
+		else if (Input.GetKeyUp(KeyCode.Keypad0) || Input.GetKeyUp(KeyCode.Alpha0))
 		{
 			_inputPassword += "0";
 		}
